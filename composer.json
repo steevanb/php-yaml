@@ -1,0 +1,19 @@
+{
+    "name": "steevanb/php-yaml",
+    "license": "MIT",
+    "type": "lib",
+    "description": "Add some features to symfony/yaml",
+    "autoload": {
+        "psr-4": { "steevanb\\PhpYaml\\": "" }
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/yaml": "^2.0||^3.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/steevanb/php-yaml.git"
+        }
+    ]
+}
