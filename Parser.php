@@ -20,14 +20,17 @@ class Parser extends SymfonyYamlParser
         static::$functions[$id] = $callable;
     }
 
-    public static function registerFileFunction()
+    /** @param string|null $path */
+    public static function registerFileFunction($path = null)
     {
-        static::registerFunction('file', function($fileName) {
-            if (is_readable($fileName) === false) {
-                throw new \Exception('File "' . $fileName . '" not found.');
+        static::registerFunction('file', function($fileName) use ($path) {
+            $path = $path === null ? __DIR__ : rtrim($path, DIRECTORY_SEPARATOR);
+            $filePath = $fileName[0] === DIRECTORY_SEPARATOR ? $fileName : $path . DIRECTORY_SEPARATOR . $fileName;
+            if (is_readable($filePath) === false) {
+                throw new \Exception('File "' . $filePath . '" not found.');
             }
 
-            return file_get_contents($fileName);
+            return file_get_contents($filePath);
         });
     }
 

@@ -1,3 +1,7 @@
+### [1.0.1](../../compare/1.0.0...1.0.1) - 2017-11-04
+
+- Add $path parameter to Parser::registerFileFunction($path)
+
 ### 1.0.0 - 2017-03-18
 
 - Create steevanb\PhpYaml\Parser
