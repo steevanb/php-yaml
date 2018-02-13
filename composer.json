@@ -7,7 +7,7 @@
         "psr-4": { "steevanb\\PhpYaml\\": "" }
     },
     "require": {
-        "symfony/yaml": "^3.1"
+        "symfony/yaml": "^3.1||^4.0"
     },
     "repositories": [
         {
